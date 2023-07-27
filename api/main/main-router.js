@@ -1,10 +1,10 @@
 
 const router = require('express').Router()
-const User = require('./main_model')
+const Data = require('./main_model')
 
 router.get('/', async (req, res, next) => { // get all
     try{
-        const data = await User.getall()
+        const data = await Data.getall()
         res.status(200).json(data)
     } catch(err){
         next(err)
@@ -14,7 +14,7 @@ router.get('/', async (req, res, next) => { // get all
     
     router.get('/:id', async (req, res, next) => { // get by id
     try{
-        const data = await User.getBy({id: req.params.id})
+        const data = await Data.getBy({id: req.params.id})
         res.status(200).json(data)
     } catch(err){
         next(err)
@@ -24,7 +24,7 @@ router.get('/', async (req, res, next) => { // get all
     
     router.post('/', async (req, res, next) => { // create new data
         try{
-            const newData = await User.add(req.body)
+            const newData = await Data.add(req.body)
             res.status(201).json(newData)
         } catch(err){
             next(err)
@@ -34,7 +34,7 @@ router.get('/', async (req, res, next) => { // get all
     
     router.delete('/:id', async (req, res, next) => { // delete data
         try{
-            const deleteData = await User.del(req.params.id)
+            const deleteData = await Data.del(req.params.id)
             res.status(201).json(deleteData)
         } catch(err){
             next(err)
