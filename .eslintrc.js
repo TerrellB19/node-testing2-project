@@ -4,7 +4,7 @@ module.exports = {
         "commonjs": true,
         "es2021": true
     },
-    "extends": "eslint:recommended",
+    "extends": "plugin:vue/vue3-essential",
     "overrides": [
         {
             "env": {
@@ -21,6 +21,9 @@ module.exports = {
     "parserOptions": {
         "ecmaVersion": "latest"
     },
+    "plugins": [
+        "vue"
+    ],
     "rules": {
     }
 }
